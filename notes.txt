@@ -88,3 +88,39 @@ Animations
         transform: translate(0);
     }
 }
+
+The box model
+==============
+
+Context - text, images, etc.
+Padding - transparent area around the content, inside of the box.
+Border - goes around the padding and the content.
+Margin - space between boxes.
+Fill area - the area that gets filled with background color or background image.
+
+box-sizing: border-box   -    the height and the width will be defined for the entire box, including the padding and
+the border and not just for the content area.
+
+What this means is that the paddings and borders that we specify will reduce the inner width of the content area, instead
+of adding them to the total height or width of an element.
+
+* The 3 most important box types:
+
+- block-level box:
+# The type of the box is always defined by a display property - for block-level boxes, the display property is usually
+set to 'block'.
+# This type of box will always occupy as much space as possible, which is usually 100% of its parent width. It will also
+create line breaks after and before it, meaning that blocks are formatted vertically, one after another.
+
+- inline boxes:
+# basically the opposite of block-level boxes, because their content is distributed in lines, meaning that an inline box
+only occupies the space that its content actually needs.  They also don't cause line breaks after or in line with them.
+# The height and width properties do not apply, which means that we cannot use those properties on the elements that are
+inline elements by default.
+# We can only specify horizontal paddings and margins.
+
+-inline-block boxes:
+# Are technically also inline boxes, but work as a block-level box on the inside.
+# Since they're tecnically inline elements, they also use up only their content space and cause no line breaks.
+# Since they work as a block-level box on the inside, the box model applies to them just like in the regular
+block-level boxes.
