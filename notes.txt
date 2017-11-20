@@ -124,3 +124,50 @@ inline elements by default.
 # Since they're tecnically inline elements, they also use up only their content space and cause no line breaks.
 # Since they work as a block-level box on the inside, the box model applies to them just like in the regular
 block-level boxes.
+
+
+BEM
+=====
+
+With component-driven design, we try to divide our page into modular components.
+The components should be reusable across a project and between different projects.
+Components should also be independant so we can use them completely on their own.
+
+BEM - Block Element Modifier
+
+E.g.,
+
+.block {
+
+}
+
+.block__element {
+
+}
+
+.block__element__modifier {
+
+}
+
+* Block - a standalone component that is meaningful on its own.
+* Element - a part of a block that has no standalone meaning.
+* Modifier - a different version of a block or an element.
+
+The 7-1 Pattern
+================
+For project architecture.
+
+We have 7 different folders where we put partial SASS files, and then one main SASS file in which we import all of our
+partial files into one final compiled CSS stylesheet.
+
+* The 7 folders:
+
+# base/ => where we put the basic product definitions.
+# components/  => where we have one file for each component.
+# layout/  => where we define the overall layout of the project.
+# pages/   => where we have styles for specific pages of the project.
+# themes/  => if you want to implement different visual themes.
+# abstracts/  => where we put code that doesn't output any CSS, e.g., variables and mixins.
+# vendors/  => where all third party CSS goes.
+
+
