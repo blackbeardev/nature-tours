@@ -223,3 +223,44 @@ npm init
 
 * Install node-sass"
 npm install node-sass --save-dev
+
+
+Using Sass
+===========
+
+Make a directory to hold your Sass code:
+
+mkdir sass
+
+Move into the sass folder and create a new file called main.scss
+
+touch main.scss
+
+* Compiling sass:
+
+We need to write a script in the package.json file:
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
+  Take out the existing script and replace with this:
+
+   "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  }
+
+  The node-sass is referring to the package that is being used.
+  sass/main.scss is referring to the path to the scss file.
+  css/style.css is referring to the path to the css file that you want the sass to be compiled into.
+
+  Then you need to run the actual code in the terminal:
+
+  npm run compile:sass
+
+  If this worked then you should get a message saying:
+
+  Rendering Complete, saving .css file...
+  Wrote CSS to /Users/erin/Desktop/*project folder*/css/style.css
+
+  And then you can open the css file to see the compiled code.
